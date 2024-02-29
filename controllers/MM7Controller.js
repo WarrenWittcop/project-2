@@ -1,14 +1,32 @@
 const MM7 = require("../models/MM7")
 
-// const create = async (req, res) => {
-//     try{
-//         const newCharacter = await character.create(req.body)
-//         console.log(newCharacter)
-//         res.redirect('/MM7s')
-//     }catch(err){
-//         console.log(err)
-//     }
-// }
+//create
+const create = async (req, res) => {
+    try{
+        const newMM7 = await MM7.create(req.body)
+        console.log(newMM7)
+        res.redirect("/MM7")
+    }catch(err){
+        console.log(err)
+    }
+}
+
+//index
+
+const index = async (req, res)=>{
+    try{
+        const MM7 = await MM7.find()
+        res.render('index.ejs', { 
+            MM7, 
+            tabTitle: 'Index',
+            currentUser: req.session.currentUser
+        })
+    }catch(err){
+        console.log(err)
+    }
+
+}
+
 // Show function
 const show = async (req, res) => {
     try{
@@ -27,6 +45,7 @@ const show = async (req, res) => {
     }
 }
 
+//new
 const newForm = (req, res)=>{
     try{
         res.render('new.ejs', {
@@ -38,11 +57,25 @@ const newForm = (req, res)=>{
     }
 }
 
-
+//edit
+const editForm = async(req, res) => {
+    try{
+        const mm7 = await MM7.findById(req.params.id)    
+        res.render("edit.ejs", { 
+            mm7,
+            tabTitle: "Edit Character",
+            currentUser: req.session.currentUser
+        })
+    }catch(err){
+        console.log(err)
+    }
+}
 
 
 
 module.exports = {
-    // create,
+    index,
+    create,
     newForm,
+    edit: editForm,
 }

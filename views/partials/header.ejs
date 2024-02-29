@@ -1,10 +1,12 @@
 <header>
     <div class="container">
       <h1>Welcome to Might and Magic 7 character creator!</h1>
-      <a class="nav-link" href="/">Home</a> <br></br>
+      <a class="nav-link" href="/MM7">Home</a>
       <% if (currentUser) { %>
-        <a class="nav-link" href="/MM7/new">Create a Character</a>
-        <li class="nav-link">Welcome <%= currentUser.username %>!</li>
+        <h2>
+         <li class="nav-link">Welcome <%= currentUser.username %>!</li>
+        </h2>
+        <a class="nav-link" href="/MM7/edit">Edit Character</a>
         <li class="nav-link">
           <form action="/sessions?_method=DELETE" method="POST">
             <input type="submit" value="Log Out" />
@@ -15,4 +17,5 @@
         <li><a class="nav-link" href="/sessions/new">Log In</a></li>
         <% } %>
     </div>
+    <link rel="stylesheet" href="app.css">
   </header>

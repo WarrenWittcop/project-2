@@ -7,8 +7,53 @@
     <%- include("./partials/header.ejs") %>
 </head>
 <body>
-    <h1>Here new</h1>
-    <a href="/MM7/<%= i %>">
-    </a>
+    <h1>Enter your character info below!</h1>
+    <form action="/MM7" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input 
+                class="form-control"
+                type="text" 
+                name="name" 
+                id="name" 
+                placeholder="Your name"/>
+            </div>
+            <div>
+                
+                <label for="CLass">Select a class!:</label>
+                <select id="Class" name="Class">
+                    <option value="Knight">Knight</option>
+                    <option value="Paladin">Paladin</option>
+                    <option value="Thief">Thief</option>
+                    <option value="Ranger">Ranger</option>
+                    <option value="Archer">Archer</option>
+                    <option value="Monk">Monk</option>
+                    <option value="Sorceror">Sorceror</option>
+                    <option value="Cleric">Cleric</option>
+                    <option value="Druid">Druid</option>
+                </select>
+            </div> 
+            <div>
+                <label for="skill1">First skill selection</label>
+                <input 
+                class="form-control"
+                type="text" 
+                name="shill1" 
+                id="skill1" 
+                placeholder="What is the first Magic School or Ability you want?">
+            </div>
+            <div>
+                <label for="skill2">Second skill selection</label>
+                <input 
+                class="form-control"
+                type="text" 
+                name="skill2" 
+                id="skill2" 
+                placeholder="What is the second Magic School or Ability you want?">
+            </div>
+      
+        <hr>
+            <input type="submit" value="Create Character">
+        </form> 
 </body>
 </html>

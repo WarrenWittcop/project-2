@@ -4,30 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  
+    <%- include("./partials/header.ejs") %>
 </head>
 <body>
-    
-    <div class="container">
-        <!-- <div class="row">
-            <div class="col-sm-3"> -->
-              <ul class="MM7">
-              <% for(i=0; i < allMM7s.length; i++) { %>
-                 <li>
-                    <a href="/MM7/<%= i %>">
-                     </a>
-                    <br>
-                    
-                    <!-- posting -->
-                     <form method="POST" action="/MM7s/<%= i %>?_method=DELETE">
-                    <input type="submit" value="DELETE"/>
-                     </form>
-                     <a class= "edit" href="/MM7s/<%= i %>/edit">Edit</a>
-                 </li>
-             <% } %>
-             </ul>
-            <!-- </div>
-        </div>     -->
-    </div>   
+    <a class="nav-link" href="/MM7/new">Create a Character</a>
+<h1>Index page</h1>
 </body>
 </html>
