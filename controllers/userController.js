@@ -13,7 +13,7 @@ router.post("/", async(req, res) => {
     try{
         console.log
         req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
-        console.log(req.body, "line 15")
+        console.log(req.body)
         const newUser = await User.create(req.body)
         console.log(newUser, "this is new user")
         res.redirect("/")

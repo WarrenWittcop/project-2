@@ -1,10 +1,9 @@
 require("dotenv").config()
 
-const port = 3000
 const express = require("express")
 const app = express()
 require("./config/database.js")
-const MM7 = require("./models/MM7.js") 
+const MM7s = require("./models/MM7.js") 
 const methodOverride = require("method-override")
 const MM7Routes = require("./routes/MM7s")
 const userController = require("./controllers/userController")
@@ -28,7 +27,7 @@ app.use(session({
     //routes
 app.use("/MM7", MM7Routes)
 app.get("/", (req, res) => {
-   res.redirect("/MM7s")})
+   res.redirect("/MM7")})
 
 app.get("/MM7", (req, res) => {
     res.render("index.ejs", {
@@ -37,6 +36,6 @@ app.get("/MM7", (req, res) => {
         currentUser: req.session.currentUser,
     })
 })   
-    app.listen(3000, () => {
+    app.listen(process.env.PORT, () => {
         console.log("Server is working!!!")
     }) 
