@@ -6,7 +6,7 @@
         <h2>
          <li class="nav-link">Welcome <%= currentUser.username %>!</li>
         </h2>
-        <a class="nav-link" href="/MM7/edit">Edit Character</a>
+        <h3>  <a class="nav-link" href="/MM7/new">Create a Character</a></h3>
         <li class="nav-link">
           <form action="/sessions?_method=DELETE" method="POST">
             <input type="submit" value="Log Out" />
@@ -17,5 +17,6 @@
         <li><a class="nav-link" href="/sessions/new">Log In</a></li>
         <% } %>
     </div>
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="/app.css">
+  
   </header>

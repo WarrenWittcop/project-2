@@ -7,7 +7,37 @@
     <%- include("./partials/header.ejs") %>
 </head>
 <body>
-    <a class="nav-link" href="/MM7/new">Create a Character</a>
 <h1>Index page</h1>
+<table>
+    <thead>
+        <tr>
+            <th >Name</th>
+            <th >Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+       <% for(let i=0; i < MM7s.length; i++) { %>
+        <tr>
+            <th scope="row">
+                <a href="/MM7/<%= MM7s[i].id %>">
+                    <%= MM7s[i].name %>
+                </a>
+            </th>
+            <td class="w-25">
+                <a href="/MM7/<%= MM7s[i].id %>/edit" 
+                    class="btn btn-info">Edit</a>
+            </td>
+            <td class="w-25">
+                <form method="POST" action="/MM7/<%= MM7s[i].id %>?_method=delete">
+                    <input
+                    class="btn btn-danger"
+                    type="submit"
+                    value="Delete">
+                </form>
+            </td>
+        </tr>
+      <% } %>
+    </tbody>
+</table>
 </body>
 </html>

@@ -8,7 +8,43 @@
     
 </head>
 <body>
-    <a class="nav-link" href="/MM7/new">Create a Character</a>
-    <h1>Here show</h1>
+
+    <h1>Character Info</h1>
+
+    <form action="/MM7/<%=MM7s.id%>?_method=PUT" method="POST">
+        <div>
+          <div>
+            <p>
+            <label for="name">Name</label>
+              "<%= MM7s.name %>"
+            </p>
+          </div>
+          <div>
+            <p>
+            <label for="Class" class="form-label">Class</label>
+            "<%= MM7s.Class %>"
+            </p>
+            </div>
+        <div>
+        <p>
+        <label for="skill1">Skill 1</label>
+            "<%= MM7s.skill1 %>"
+        </p>
+        </div>
+        <div>
+            <p>
+            <label for="skill2">Skill 2</label>
+                "<%= MM7s.skill2 %>"
+            </p>
+            </div>
+        <div>
+            <p>
+            <label for="race">Race:</label>
+            "<%= MM7s.race %>"
+        </p>
+        </div>
+      </form>
+
+      
 </body>
 </html>

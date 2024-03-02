@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Screen</title>
     <%- include("./partials/header.ejs") %>
+    <style>
+        /* Add any necessary styles for your table */
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
     <h1>Enter your character info below!</h1>
     <form action="/MM7" method="post">
+
             <div>
                 <label for="name">Name:</label>
                 <input 
@@ -18,10 +32,10 @@
                 id="name" 
                 placeholder="Your name"/>
             </div>
+
             <div>
-                
-                <label for="CLass">Select a class!:</label>
-                <select id="Class" name="Class">
+                <label for="Class">Select a class!:</label>
+                <select id="dynamicDropdown" name="Class">
                     <option value="Knight">Knight</option>
                     <option value="Paladin">Paladin</option>
                     <option value="Thief">Thief</option>
@@ -33,15 +47,17 @@
                     <option value="Druid">Druid</option>
                 </select>
             </div> 
+
             <div>
                 <label for="skill1">First skill selection</label>
                 <input 
                 class="form-control"
                 type="text" 
-                name="shill1" 
+                name="skill1" 
                 id="skill1" 
-                placeholder="What is the first Magic School or Ability you want?">
+                placeholder="First Choice?">
             </div>
+
             <div>
                 <label for="skill2">Second skill selection</label>
                 <input 
@@ -49,11 +65,43 @@
                 type="text" 
                 name="skill2" 
                 id="skill2" 
-                placeholder="What is the second Magic School or Ability you want?">
+                placeholder="Second Choice?">
             </div>
       
-        <hr>
-            <input type="submit" value="Create Character">
+            <div>
+                <label for="race">Select Race</label>
+                <select id="datasetSelector" name="race" onchange="updateTable()">
+                    <option value="Goblin">Goblin</option>
+                    <option value="Human">Human</option>
+                    <option value="Elf">Elf</option>
+                    <option value="Dwarf">Dwarf</option>
+                </select>
+            </div>
+            <div id="tableContainer">
+            </div>      
+
+            <script>
+        function updateTable() {
+            // Get the selected race value
+            const selectedRace = document.getElementById("datasetSelector").value;
+
+            let tableContent = "";
+            if (selectedRace === "Goblin") {
+                tableContent = "<table><tr><th>Attribute</th><th>Base Value</th></tr><tr><td>Might</td><td>14</td></tr><tr><td>Intellect</td><td>7</td></tr><tr><td>Personality</td><td>7</td></tr><tr><td>Endurance</td><td>11</td></tr><tr><td>Accuracy</td><td>11</td></tr><tr><td>Speed</td><td>14</td></tr><tr><td>Luck</td><td>9</td></tr></table>";
+            } else if (selectedRace === "Human") {
+                tableContent = "<table><tr><th>Attribute</th><th>Value</th></tr><tr><td>Might</td><td>11</td></tr><tr><td>Intellect</td><td>11</td></tr><tr><td>Personality</td><td>11</td></tr><tr><td>Endurance</td><td>9</td></tr><tr><td>Accuracy</td><td>11</td></tr><tr><td>Speed</td><td>11</td></tr><tr><td>Luck</td><td>9</td></tr></table>";
+            } else if (selectedRace === "Elf") {
+                tableContent = "<table><tr><th>Attribute</th><th>Value</th></tr><tr><td>Might</td><td>7</td></tr><tr><td>Intellect</td><td>14</td></tr><tr><td>Personality</td><td>11</td></tr><tr><td>Endurance</td><td>7</td></tr><tr><td>Accuracy</td><td>14</td></tr><tr><td>Speed</td><td>11</td></tr><tr><td>Luck</td><td>9</td></tr></table>";
+            } else if (selectedRace === "Dwarf") {
+                tableContent = "<table><tr><th>Attribute</th><th>Value</th></tr><tr><td>Might</td><td>14</td></tr><tr><td>Intellect</td><td>11</td></tr><tr><td>Personality</td><td>11</td></tr><tr><td>Endurance</td><td>14</td></tr><tr><td>Accuracy</td><td>9</td></tr><tr><td>Speed</td><td>9</td></tr><tr><td>Luck</td><td>9</td></tr></table>";
+            }
+
+            // Append the table content to the tableContainer
+            document.getElementById("tableContainer").innerHTML = tableContent;
+        }
+            </script>
+                    <hr>
+            <input type="submit" value="Finish Creation">
         </form> 
 </body>
 </html>

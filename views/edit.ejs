@@ -7,7 +7,67 @@
   <%- include("./partials/header.ejs") %>
 </head>
 <body>
-  <a class="nav-link" href="/MM7/new">Create a Character</a>
+
   <h1>Here edit</h1>
+  <form action="/MM7/<%=MM7s.id%>?_method=PUT" method="POST">
+    <div>
+      <div>
+        <label for="name" class="form-label">Name</label>
+        <input
+          value="<%= MM7s.name %>"
+          class="form-control"
+          type="text"
+          name="name"
+          id="name"
+        />
+      </div>
+      <div>
+        <label for="Class">Class</label>
+            <select id="dynamicDropdown" name="Class">
+                <option value="Knight">Knight</option>
+                <option value="Paladin">Paladin</option>
+                <option value="Thief">Thief</option>
+                <option value="Ranger">Ranger</option>
+                <option value="Archer">Archer</option>
+                <option value="Monk">Monk</option>
+                <option value="Sorceror">Sorceror</option>
+                <option value="Cleric">Cleric</option>
+                <option value="Druid">Druid</option>
+            </select>
+        </div> 
+    </div>
+    <div>
+    <label for="skill1" class="form-label">Skill 1</label>
+      <input 
+      value="<%= MM7s.skill1 %>"
+      class="form-control"
+      type="text"
+      name="skill1"
+      id="skill1"
+      />
+    </div>
+    <div>
+      <label for="skill2" class="form-label">Skill 2</label>
+      <input 
+      value="<%= MM7s.skill2 %>"
+      class="form-control"
+      type="text"
+      name="skill2"
+      id="skill2"
+      />
+    </div>
+    <div>
+      <label for="race">Select Race</label>
+      <select id="datasetSelector" name="race">
+          <option value="Goblin">Goblin</option>
+          <option value="Human">Human</option>
+          <option value="Elf">Elf</option>
+          <option value="Dwarf">Dwarf</option>
+      </select>
+  </div>
+    <hr>
+    <input type="submit" class="text-center" value="Finish Editing" />
+  </form>
+    <hr>
 </body>
 </html>

@@ -9,6 +9,7 @@ const MM7Routes = require("./routes/MM7s")
 const userController = require("./controllers/userController")
 const session = require("express-session")
 const sessionsController = require("./controllers/sessions.js")
+const bodyParser = require('body-parser');
 
 //middleware--goes above the 7 restful routes
 app.use(express.static("public"))
