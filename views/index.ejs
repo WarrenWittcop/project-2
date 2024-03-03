@@ -5,14 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <%- include("./partials/header.ejs") %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <style>
+        body {
+            font-size: 14px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .full-width {
+            width: 95%;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            max-width: none;
+        }
+
+        .table1 {
+          background-color: white;
+           margin: 0 auto;
+           width: 80%;
+           align-items: center;
+           border-style: double;
+        }
+
+        .table1 th,
+         .table1 td {
+         text-align: center;
+       }
+
+        .collapsible-container {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .collapsible-fixed-width {
+            width: 100%;
+            max-width: none;
+        }
+
+        .collapsible-body {
+            width: 100%;
+        }
+
+    </style>
+    
+
 </head>
 <body>
 <h1>Index page</h1>
-<table>
+<br>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const collapsibles = document.querySelectorAll('.collapsible');
+        M.Collapsible.init(collapsibles, {});
+    });
+</script>
+
+
+<div class="flex-container full-width">
+ 
+  <table class="table1">
     <thead>
         <tr>
             <th >Name</th>
             <th >Actions</th>
+            <th >Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -38,6 +107,249 @@
         </tr>
       <% } %>
     </tbody>
-</table>
+  </table>
+
+  <div class="collapsible-container">
+  <div class="table-container collapsible-fixed-width"> 
+    <ul class="collapsible">
+      <li>
+        <div class="collapsible-header">
+        <h5>Classes</h5>
+        </div>
+          <div class="collapsible-body"><span>Below is a list of the 9 available classes. Each has their own strengths and weaknesses.</span></div>
+      </li>
+      <li>
+       <div class="collapsible-header">Knight</div>
+        <div class="collapsible-body"><span>The Knight class is the workhorse fighting class. Knights start with the largest selection of weapons and armor, and may ultimately use any type of weapon or armor. Being the toughest warriors of the classes, Knights begin with the greatest number of hit points and get the most number of hit points when they advance in level. Knights may never learn spells, nor may they ever learn (or need) the Meditation skill.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Paladin</div>
+          <div class="collapsible-body"><span>A cross between Knight and Cleric, Paladins perform both roles well, but not as well as the more focused classes they borrow from. Like Knights, Paladins can learn to use any type of weapon or armor, although they don't have as many choices to begin with. Paladins also begin with the Spirit realm of magic, and can also learn to use the Clerical Mind and Body realms. Their skill in the greater realms of Light and Dark is sharply limited, and they may never learn any of the Elemental realms.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Thief</div>
+         <div class="collapsible-body"><span>The Thief class concentrates less on fighting and more on utility skills, such as disarming traps and stealing. Although they aren't as good with weapons and armor as Knights, thieves are still better fighters than the semi and full spell using classes. Thieves may eventually use spells from the Elemental schools, but they will never be very good at them.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Ranger</div>
+          <div class="collapsible-body"><span>Rangers are a cross between Knights and Druids. Of all the classes, Rangers may learn the broadest range of skills, but can master few of them. Rangers may eventually learn both the Elemental and Clerical realms of magic, leaving only the greater realms of Light and Dark out of their reach. Rangers may also learn to use most weapons, armor, and secondary skills, with only Plate and Mace beyond their reach.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Archer</div>
+          <div class="collapsible-body"><span>Like Paladins, the Archer is a hybrid of the Knight and Sorcerer classes. Archers may learn to use all weapons except the mace, (specializing in the bow, of course) but they may never learn the shield or plate armor skills. They are compensated with the ability to learn magic from the elemental schools. The greater realms of Light and Dark can be learned on their second promotions, but they will never be very skilled in them.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Monk</div>
+          <div class="collapsible-body"><span>Monks concentrate on unarmed combat. Monks are second only to knights in combat, and they have access to spells from the Clerical schools (Spirit, Mind, and Body) of magic when they are promoted to Initiate.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Sorceror</div>
+          <div class="collapsible-body"><span>Students of the realm of Elemental magic, Sorcerers concentrate on offensive and utilitarian magic. Sorcerers are downright rotten fighters barely able to learn to use the dagger, the staff, and the bow effectively. They are allowed to use only leather armor, cannot use shield, and have the lowest hit points of all the classes. With that aside, Sorcerers can wield mighty offensive spells and have access to the Mirrored Path of the Light and the Dark, from which come the best spells in the lands.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Cleric</div>
+         <div class="collapsible-body"><span>Clerics are adventuring, spell casting holy men. A Cleric is a mediocre fighter but an excellent spell caster, with spells concentrating on healing and defensive themes. Clerics and Sorcerers are the only two classes that can grandmaster in the Mirrored Path of the Light and the Dark, and the awesome spells these realms of magic offer. They are, unfortunately, rather limited in their weapons, with mace, staff, and bow being their only choices. Defense is a little better with plate and dodge skill being the only kind forbidden them.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Druid</div>
+          <div class="collapsible-body"><span>Druids are a hybrid of the Sorcerer and Cleric classes. They make poor fighters (better only than the lowly Sorcerer) and have relatively few hit points. On the plus side, Druids can use both Sorcerer and Clerical magic. Druids may not learn Light and Dark magic, and they can only use the staff, dagger, mace, and bow as weapons while wearing only leather and shield as armor. Most secondary skills are open to the Druid</span></div>
+      </li>
+  </ul>
+</div>  
+
+<div class="table-container collapsible-fixed-width"> 
+  <ul class="collapsible">
+  <li>
+    <div class="collapsible-header">
+      <h5>Magic Schools</h5>
+    </div>
+    <div class="collapsible-body"><span>Below is a list of the 9 available magic schools. Each has their own strengths and weaknesses.</span></div>
+  </li>
+  <li>
+    <div class="collapsible-header">Fire</div>
+    <div class="collapsible-body"><span>Fire magic is a good source of offensive spells and includes spells having to do with speed. Expert and master ranking permit access to greater versions of fire spells.</span></div>
+  </li>
+  <li>
+    <div class="collapsible-header">Water</div>
+    <div class="collapsible-body"><span>Water magic is equally defensive and offensive and concentrates on spells that move or change things. Expert and master ranking permit access to greater versions of water spells.</span></div>
+  </li>
+  <li>
+      <div class="collapsible-header">Air</div>
+      <div class="collapsible-body"><span>Air magic tends to to be defensive and informational in nature and includes spells having to do with flight. Expert and master ranking permit access to greater versions of air spells.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Earth</div>
+      <div class="collapsible-body"><span>Earth magic is defensive and includes spells that protect, bind, and strengthen. Expert and master ranking permit access to greater versions of earth spells.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Body</div>
+      <div class="collapsible-body"><span>Body magic is concerned with spells of healing and enhancement. Spells to heal, wound, and cure disease and poison are all part of body magic. Expert and master ranking permit access to greater versions of body spells</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Spirit</div>
+      <div class="collapsible-body"><span>Spirit magic concentrates on spells involving life and death. Included are spells to raise the dead, spells that affect the Undead, and spells that influence aging. Expert and master ranking permit access to greater versions of spirit spells.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Mind</div>
+      <div class="collapsible-body"><span>Mind magic tends to be offensive and informational in nature. Charm, fear, and telekinesis are all examples of mind magic. Expert and master ranking permit access to greater versions of mind spells.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Light</div>
+      <div class="collapsible-body"><span>Light magic spells are some of the strongest spells in Erathia. Usable well only by Cleric or Sorcerors. Light magic cannot be chosen before creating a character and must be learned in travel.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Dark</div>
+      <div class="collapsible-body"><span>Dark magic spells are some of the strongest spells in Erathis. While dark magic spells cna have spectacular results, they sometimes come with unwanted side effects...Usable well only by Cleric or Sorcerors. Dark magic cannot be chosen before creating a character and must be learned in travel. </span></div>
+    </li>
+
+</ul>
+</div>  
+
+<div class="table-container collapsible-fixed-width"> 
+  <ul class="collapsible">
+    <li>
+      <div class="collapsible-header">
+        <h5>Weapon Skills</h5>
+      </div>
+      <div class="collapsible-body"><span>Below is a list of the 9 available weapon skills. </span></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Axe</div>
+      <div class="collapsible-body"><span>While rather slow on the attack, axes do a lot of damage when they hit.  Expert axe fighters gain a little more speed on their attacks while master axe fighters can deliver extra damage</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Blaster</div>
+      <div class="collapsible-body"><span>A weapon from before the Silence, their making has long since been lost.  Expert and Master Blasters gain double and triple accuracy with these awesome weapons.</span></div>
+    </li>
+    <li>
+        <div class="collapsible-header">Bow</div>
+        <div class="collapsible-body"><span>Bow skill covers both bow and crossbow usage.  Expert archers gain a speed increase with their weapon, while master archers can fire two arrows with every attack.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Dagger</div>
+        <div class="collapsible-body"><span>While daggers don’t do the kind of damage that a sword or an axe can deliver, they are very quick—sometimes letting you get two attacks for every one of your slower opponents'.  Expert dagger fighters can wield a dagger in their left hand while using another weapon in their right.  Master dagger fighters have a chance of doing a triple damage attack.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Mace</div>
+        <div class="collapsible-body"><span>Mace skill covers all kinds of blunt trauma weapons ranging from batons to flails.  Expert mace swingers do extra damage with their weapons while master ranking gives a chance to stun opponents</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Staff</div>
+        <div class="collapsible-body"><span>A staff is a two-handed pole equally good on offense and defense.  Expert ranking in the staff will increase your armor class and master ranking will allow you to occasionally stun your opponents.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Spear</div>
+        <div class="collapsible-body"><span>Spear covers all kinds of pole weapons with blades attached to the business end.  Spears are versatile and can be used one or two handed (they work better with two hands).</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Sword</div>
+        <div class="collapsible-body"><span>The sword skill covers most types of blades longer than a knife.  Expert swordsmen gain a quicker attack while master swordsmen may use any one-handed sword in their left hand and another weapon in their right.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Unarmed</div>
+        <div class="collapsible-body"><span>Unarmed skill is your ability to use only your hands and feet in combat, no weapons. This skill only works with your hands empty.  Additional ranks of unarmed skill will increase your chance to hit.</span></div>
+      </li>
+
+  </ul>
+</div>  
+
+  <div class="table-container collapsible-fixed-width"> 
+     <ul class="collapsible">
+      <li>
+        <div class="collapsible-header">
+         <h5>Armor/Augments</h5>
+        </div>
+          <div class="collapsible-body"><span>Below is a list of the 9 armor and augment skills. Not everyone can use all skills equally</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Chain</div>
+          <div class="collapsible-body"><span>Chain armor is the medium armor type. It provides more protection than leather and less than plate, but it also slows your character down more than leather. Chain armor skill increases the protection offered by chain armor. As with all armors, Expert and master ranking both reduce the amount the armor slows you down.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Dodging</div>
+          <div class="collapsible-body"><span>Dodging skill can be used only when you are not wearing armor or using a shield. Additional ranks of dodging will increase your armor class while not wearing armor.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Leather</div>
+        <div class="collapsible-body"><span>Leather armor is the lightest armor a character can wear. While leather provides less protection than chain or plate armor, it also slows your character down the least. Leather armor skill increases the protection offered by leather armor. As with all armors, Expert and master ranking both reduce the amount the armor slows you down.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Plate</div>
+        <div class="collapsible-body"><span>Plate armor is the heaviest and most protective armor available. At Normal level, skill level is added to armor class. Experts have their armor related recovery time penalty halved. Masters take only half damage from physical attacks. Grand Masters have no recovery penalty.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Shield</div>
+        <div class="collapsible-body"><span>Shield skill directly improves a character's armor class while a shield is employed. Expert and master ranking in the shield increase this defensive bonus.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Armsmaster</div>
+        <div class="collapsible-body"><span>Armsmaster skill represents the warrior's tricks of the trade. Initially, armsmaster reduces the recovery times of your melee weapons, and later on can give you a bonus to hit and even damage.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Body Building</div>
+        <div class="collapsible-body"><span>Bodybuilding skill adds hit points directly to your character's hit point totals. Multiply the skill in bodybuilding by the character's base class bonus (4 for knights, 1 for sorcerers, etc.) to get the total. Expert ranking doubles this total and master triples it.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Learning</div>
+        <div class="collapsible-body"><span>Learning skill directly increases the experience your character receives. Every point of skill is a percent (plus a starting bonus of 9%). Five skill points would turn a 100 experience point award into a 114 experience point award. Expert doubles and master triples this bonus, so 10 points of learning at master rank would give a 39% bonus to all experience point gain.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header">Meditation</div>
+        <div class="collapsible-body"><span>Meditation skill adds spell points directly to your character's spell point totals. Multiply the skill in meditation by the character's base class bonus (4 for sorcerers, 0 for knights, etc.) to get the total. Expert ranking doubles this total and master triples it.</span></div>
+      </li>
+     </ul>
+      </div>  
+
+     <div class="table-container collapsible-fixed-width"> 
+      <ul class="collapsible">
+        <li>
+          <div class="collapsible-header">
+            <h5>Assorted</h5>
+          </div>
+          <div class="collapsible-body"><span>Below is a list of the 8 assorted special skills with one extra. Not everyone can use all skills equally</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header">Alchemy</div>
+          <div class="collapsible-body"><span>Alchemy skill allows you to mix potions. Without the alchemy skill, you barely have the knowledge to make a simple potion, though alchemy skill is added to the strength value of the base ingredient to determine the strength of a simple potion. As you attain Expert, Master and Grandmaster ranking in alchemy, you learn to mix more complicated potions.</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header">Disarm Trap</div>
+          <div class="collapsible-body"><span>Disarm traps skill is checked automatically when opening a trapped chest or other container. A higher skill in disarm traps gives a better chance of disarming the trap. Expert and Master rank doubles and triples the chance to successfully disarm the trap.</span></div>
+        </li>
+        <li>
+            <div class="collapsible-header">Identify Item</div>
+            <div class="collapsible-body"><span>The identify skill will automatically identify an item if your character's skill level is high enough when you right click on an item. Certain items require your character to be an expert or master in this skill to properly identify them.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Identify Monster</div>
+            <div class="collapsible-body"><span>Identify Monster allows you to gain more information from creatures when you right click on them. Initially you will learn their exact number of hit points if your skill is sufficient. You can gain additional information at Expert and Master ranks.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Merchant</div>
+            <div class="collapsible-body"><span>Merchant skill helps adjust prices in your favor, whether you are buying or selling.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Perception</div>
+            <div class="collapsible-body"><span>Perception increases your chance of noticing a trap as it goes off and reducing or avoiding the damage it would cause. Perception also allows your character to notice treasures where others would not. Higher perception skill allows you to escape stronger traps and notice harder to find treasures.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Repair Item</div>
+            <div class="collapsible-body"><span>Repair skill allows your characters to repair broken equipment. Higher skill level allows you to repair better items and expert and master skill rankings allow you to repair complex items and artifacts. The skill will work automatically when you right click on a broken item in your inventory.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Stealing</div>
+            <div class="collapsible-body"><span>Stealing allows you to take items that don't belong to you from shops, or to steal money or items from people. Being caught, however, can lead to severe fines -- and outstanding debt is a punishable offense in castles.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Arcomage</div>
+            <div class="collapsible-body"><span>This is a mini game that is unlocked once complete the quest to find the cards (and the corpse holding them). There are 3 ways to win; getting your tower to a cetain height, destroying the enemy tower, or reaching a certain amount of any of the 3 resources. The condtions for victory change on location so its usually better to play toward the specific taverns rules. You get gold the first time you win at any of the 13 taverns with a special quest with an amazing prize if you beat all 13!</span></div>
+          </li>
+        </ul>
+        </div>  
+
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>

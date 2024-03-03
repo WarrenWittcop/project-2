@@ -1,73 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <%- include("./partials/header.ejs") %>
-</head>
-<body>
 
-  <h1>Here edit</h1>
-  <form action="/MM7/<%=MM7s.id%>?_method=PUT" method="POST">
-    <div>
-      <div>
-        <label for="name" class="form-label">Name</label>
-        <input
-          value="<%= MM7s.name %>"
-          class="form-control"
-          type="text"
-          name="name"
-          id="name"
-        />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Editor</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <%- include("./partials/header.ejs") %>
+    <style>
+      body {
+          font-size: 14px;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+
+      .container2 {
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+          box-sizing: border-box;
+          max-width: 1200px;
+      }
+
+      .section {
+          width: 45%;
+          margin: 20px 0;
+      }
+
+      table {
+          background-color: white;
+          border-collapse: collapse;
+          width: 100%;
+          margin-top: 75px;
+      }
+
+      th,
+      td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+      }
+  </style>
+</head>
+
+<body>
+      <div class="container2">
+          <div class="section">
+            <h2>Character Editor</h2>
+            <form action="/MM7/<%=MM7s.id%>?_method=PUT" method="POST">
+                <div>
+                    <div>
+                        <label for="name" class="form-label">Name</label>
+                        <input value="<%= MM7s.name %>" class="form-control" type="text" name="name" id="name" />
+                    </div>
+                    <div>
+                        <label for="Class">Class</label>
+                        <select id="dynamicDropdown" name="Class" class="browser-default">
+                            <option value="Knight" <%= MM7s.Class === 'Knight' ? 'selected' : '' %>>Knight</option>
+                            <option value="Paladin" <%= MM7s.Class === 'Paladin' ? 'selected' : '' %>>Paladin</option>
+                            <option value="Thief" <%= MM7s.Class === 'Thief' ? 'selected' : '' %>>Thief</option>
+                            <option value="Ranger" <%= MM7s.Class === 'Ranger' ? 'selected' : '' %>>Ranger</option>
+                            <option value="Archer" <%= MM7s.Class === 'Archer' ? 'selected' : '' %>>Archer</option>
+                            <option value="Monk" <%= MM7s.Class === 'Monk' ? 'selected' : '' %>>Monk</option>
+                            <option value="Sorceror" <%= MM7s.Class === 'Sorceror' ? 'selected' : '' %>>Sorceror</option>
+                            <option value="Cleric" <%= MM7s.Class === 'Cleric' ? 'selected' : '' %>>Cleric</option>
+                            <option value="Druid" <%= MM7s.Class === 'Druid' ? 'selected' : '' %>>Druid</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="skill1" class="form-label">Skill 1</label>
+                    <input value="<%= MM7s.skill1 %>" class="form-control" type="text" name="skill1" id="skill1" />
+                </div>
+                <div>
+                    <label for="skill2" class="form-label">Skill 2</label>
+                    <input value="<%= MM7s.skill2 %>" class="form-control" type="text" name="skill2" id="skill2" />
+                </div>
+                <div>
+                    <label for="race">Select Race</label>
+                    <select id="datasetSelector" name="race" class="browser-default">
+                        <option value="Goblin" <%= MM7s.race === 'Goblin' ? 'selected' : '' %>>Goblin</option>
+                        <option value="Human" <%= MM7s.race === 'Human' ? 'selected' : '' %>>Human</option>
+                        <option value="Elf" <%= MM7s.race === 'Elf' ? 'selected' : '' %>>Elf</option>
+                        <option value="Dwarf" <%= MM7s.race === 'Dwarf' ? 'selected' : '' %>>Dwarf</option>
+                    </select>
+                </div>
+                <br>
+                <input type="submit" class="text-center" value="Finish Editing" />
+            </form>
+          </div>  
+
+        <div>
+            <table>
+              <tr>
+                <th colspan="5">
+                    <h3>Starting values by race:</h3>
+                </th>
+            </tr>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Goblin</th>
+                    <th>Human</th>
+                    <th>Elf</th>
+                    <th>Dwarf</th>
+                </tr>
+                <tr>
+                    <td>Might</td>
+                    <td>14</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>Intellect</td>
+                    <td>7</td>
+                    <td>11</td>
+                    <td>14</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>Personality</td>
+                    <td>7</td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>Endurance</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>7</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>Accuracy</td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td>14</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>Speed</td>
+                    <td>14</td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>Luck</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>9</td>
+                </tr>
+            </table>
+        </div>
       </div>
-      <div>
-        <label for="Class">Class</label>
-            <select id="dynamicDropdown" name="Class">
-                <option value="Knight">Knight</option>
-                <option value="Paladin">Paladin</option>
-                <option value="Thief">Thief</option>
-                <option value="Ranger">Ranger</option>
-                <option value="Archer">Archer</option>
-                <option value="Monk">Monk</option>
-                <option value="Sorceror">Sorceror</option>
-                <option value="Cleric">Cleric</option>
-                <option value="Druid">Druid</option>
-            </select>
-        </div> 
-    </div>
-    <div>
-    <label for="skill1" class="form-label">Skill 1</label>
-      <input 
-      value="<%= MM7s.skill1 %>"
-      class="form-control"
-      type="text"
-      name="skill1"
-      id="skill1"
-      />
-    </div>
-    <div>
-      <label for="skill2" class="form-label">Skill 2</label>
-      <input 
-      value="<%= MM7s.skill2 %>"
-      class="form-control"
-      type="text"
-      name="skill2"
-      id="skill2"
-      />
-    </div>
-    <div>
-      <label for="race">Select Race</label>
-      <select id="datasetSelector" name="race">
-          <option value="Goblin">Goblin</option>
-          <option value="Human">Human</option>
-          <option value="Elf">Elf</option>
-          <option value="Dwarf">Dwarf</option>
-      </select>
-  </div>
-    <hr>
-    <input type="submit" class="text-center" value="Finish Editing" />
-  </form>
-    <hr>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>
