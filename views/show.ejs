@@ -7,63 +7,106 @@
     <%- include("./partials/header.ejs") %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <style>
+
+      .character-info-heading {
+        background-color: white;
+          border-style: double;
+      }
+
+      .full-width {
+            width: 95%;
+        }
+
+      .collapsible-header {
+        font-weight: bolder;
+        flex-grow: 1;
+      }
+
+      .table-container {
+        width: 95%;
+        margin: 0px;
+        border-style: double;
+      }
+
       table {
           border-collapse: collapse;
           width: 100%;
-          margin-top: 15px;
+          margin-top: 5px;
       }
+      
       th, td {
           border: 1px solid #ddd;
           padding: 8px;
           text-align: left;
       }
 
-      .character-info-container .character-info p {
-         font-size: 18px !important;
-         border-color: black !important;
-        }
-
-        .character-info-container .character-info-form label,
-        .character-info-container .character-info-form span {
-             font-size: 18px !important;
-        }
 
       .character-info-container {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            background-color: white;
+            width: 90%;
+            font-size: 18px;
+            border-style: double;
+            margin-bottom: 5px;
         }
 
         
         .character-info,
         #attributeContainer {
-            font-size: 16px;
             width: 50%;
-            margin-bottom: 5px;
-        
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-style: double;
         }
-        .character-info-form p {
-            font-size: 18px !important;
-            margin: 0;
-        }
+
 
         .collapsible-container {
             display: flex;
             gap: 10px;
-            width: 100%;
+            width: 90%;
             justify-content: center;
-            margin-top: 20px;
+            border-style: double;
+            height:100%;
+            margin: 0;
+            padding: 0;
         }
 
         .collapsible-fixed-width {
-            width: 100%;
+            width: 95%;
             max-width: none;
         }
 
         .collapsible-body {
             width: 100%;
+            background-color: lightgray;
+            flex-grow: 1;
         }
+
+        label {
+          font-size: 18px;
+          font-weight: bold;
+          color: red;
+        }
+
+        
+  .table-container {
+    width: 100%; 
+    margin: 0 auto; 
+  }
+
+  @media (max-width: 992px) {
+    .table-container {
+      width: 100%;
+    }
+  }
 
   </style>
 
@@ -109,7 +152,7 @@
     </div>  
 
     <div id="attributeContainer"></div>
-
+    </div>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
           updateAttributes();
@@ -161,8 +204,15 @@
                   return [0, 0, 0, 0, 0, 0, 0];
           }
       }
-  </script>
+    </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const collapsibles = document.querySelectorAll('.collapsible');
+        M.Collapsible.init(collapsibles, {});
+    });
+</script>
   
 <div class="collapsible-container">
     <div class="table-container collapsible-fixed-width"> 
@@ -404,6 +454,6 @@
   
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
 </html>

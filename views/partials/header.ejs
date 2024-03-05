@@ -6,6 +6,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="path/to/your/materialize.min.css">
   <style>
+    
     body {
       font-size: 14px;
       margin: 0;
@@ -19,21 +20,14 @@
       color: white;
       padding: 5px;
       box-sizing: border-box;
-<<<<<<< HEAD
       width: 100%; 
-=======
-      width: 100%; /* Set the width to 100% */
->>>>>>> c32a793dc330f27e64a07e023605ee035f56a7aa
     }
 
     .container {
       display: flex;
       flex-direction: column;
-<<<<<<< HEAD
       max-width: 80%; 
-=======
-      max-width: 80%; /* Set a maximum width */
->>>>>>> c32a793dc330f27e64a07e023605ee035f56a7aa
+      max-width: 100%; 
       margin: 0 auto;
     }
 
@@ -56,27 +50,35 @@
       text-align: center;
     }
 
-    .nav-link {
+    .nav-link, input[type="submit"] {
+      font-weight:bold;
       text-decoration: none;
       color: white;
+      background-color: #333;
+      padding: 8px 12px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
+
+    .nav-link:hover, input[type="submit"]:hover {
+     background-color: #555;
+    }
+
   </style>
 </head>
 <body>
   <header>
     <h2>Welcome to Might and Magic 7 character creator!</h2>
     <div class="container">
-   
-
       <h3>Welcome <%= currentUser.username %>!</h3>
-
-      <ul class="nav-links">
-        <li><a class="nav-link" href="/MM7">Home</a></li>
-        <% if (currentUser) { %>
-          <li><a class="nav-link" href="/MM7/new">Create a Character</a></li>
-          <li>
+        <ul class="nav-links">
+         <li><a class="nav-link" href="/MM7">Home</a></li>
+           <% if (currentUser) { %>
+            <li><a class="nav-link" href="/MM7/new">Create a Character</a></li>
+         <li>
             <form action="/sessions?_method=DELETE" method="POST">
-              <input type="submit" value="Log Out" />
+              <input type="submit" value="Log Out"/>
             </form>
           </li>
         <% } else { %>
