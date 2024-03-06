@@ -24,10 +24,16 @@ Getting Started:
 
 website: https://git.heroku.com/mm7-character-maker.git or can fork and clone the app from Github directly at: https://github.com/WarrenWittcop/project-2.
 
-If you fork and clone to download the app using Node.js and Gitbash the npms I used were: 1. npm i express -- install express
+If you fork and clone to download the app using Node.js and Gitbash the npms I used were: 
+
+1. npm i express -- install express
+
 2. npm init -y -- install package json
+
 3. npm install ejs -- install ejs file usage   (Embedded JavaScript)
+
 4. npm install method-override -- install methodoverride
+
 5. npm i mongoose -- get Mongoose going
 
 Once you have installed the needed npms or accessed directly you are taken to the login page. From there just sign up if you haven't already to get logged in. After log-in at the top of every page are 3 links, Home which takes you to the Index page that shows created characters. Create a character which takes youu to the create page. Lastly, logout which will sign uou ouut and take you back to the Login screen.
@@ -50,11 +56,16 @@ As always credit goes to our awesome intructors at General Assembly, Nicole Hami
 
 Website credits- The below websites have helped me with varying definitions, syntax, and debugging.
 
-
 -https://materializecss.com/ -- for the collapsible stylesheets
+
 -https://www.w3schools.com
+
 -https://stackoverflow.com
+
 -https://www.google.com
+
 -https://chat.openai.com/
+
 -https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
 -https://www.mongodb.com/developer/products/mongodb/mongodb-schema-design-best-practices/
