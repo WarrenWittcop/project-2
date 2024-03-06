@@ -7,6 +7,9 @@
     <%- include("./partials/header.ejs") %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <link rel="stylesheet" href="app.css">
+
       <style>
         body {
             font-size: 14px;
@@ -20,12 +23,18 @@
           background-color: white;
           padding: 10px;
           border-style: double;
+        } 
+
+        h4 {
+          border-style: double;
+          background-color: white;
+          padding: 10px;
+        }
 
         h5 {
           font-weight: bold;
         }  
 
-        }
         .full-width {
             width: 95%;
         }
@@ -54,6 +63,7 @@
 
        .collapsible {
         border-style: double;
+        padding: 0;
        }
 
         .collapsible-container {
@@ -64,26 +74,37 @@
             border-style: double;
             margin-top: 0px;
             padding: 0px;
-           
         }
 
         .collapsible-fixed-width {
             width: 100%;
             max-width: none;
+            padding: 0;
         }
 
         .collapsible-body {
             width: 100%;
             background-color: lightgray;
+            padding: 0;
         }
     </style>
     
 
 </head>
 <body>
+
+  <h4>
+  
+    The game Might and Magic VII lets you have up to 4 characters per party with any race and class combo you wish!
+  
+  </h4>
+  
 <h1>Character List</h1>
 <br>
 
+
+
+<br>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const collapsibles = document.querySelectorAll('.collapsible');

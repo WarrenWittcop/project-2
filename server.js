@@ -13,7 +13,6 @@ const bodyParser = require('body-parser');
 
 //middleware--goes above the 7 restful routes
 app.use(express.static("public"))
-//express.json() allows our server to accept json
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride("_method"))
@@ -38,5 +37,4 @@ app.get("/MM7", (req, res) => {
     })
 })   
     app.listen(process.env.PORT, () => {
-        console.log("Server is working!!!")
     }) 

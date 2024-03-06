@@ -5,21 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="app.css">
+
+    <style>
+        body {
+            background-image: url("https://i.imgur.com/SzMWgbv.jpg");
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            width: 30%;
+            margin: 10px;
+            border-style: double;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 5px;
+            box-sizing: border-box;
+            width: 100%; 
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+    </style>    
+
 </head>
+
 <body>
-    <h1>Login</h1>
-    <form action="/sessions" method="POST">
+
+    <header>
+        <h2>Welcome to Might and Magic 7 character creator!</h2>
+        <br>
+        <h3>Login or Sign up to get started!</h3>
+    </header>
+
+   <div class="container">
+     <h1>Login</h1>
+     <form action="/sessions" method="POST">
         Username: <input required type="text" name="username"/><br>
         Password: <input required type="text" name="password"><br>
         <input type="submit" name="" value="Login"/>
-    </form>
+     </form>
+    </div> 
 
-    <h2>Sign up if you're not a member! </h2>
-    <form action="/users" method="POST">
-        Username: <input required type="text" name="username"/><br>
-        Password: <input required type="text" name="password"><br>
-        <input type="submit" name="" value="Sign Up"/>
-    </form>
-    
+    <div class="container">
+        <h2>Sign up if you're not a member! </h2>
+         <form action="/users" method="POST">
+          Username: <input required type="text" name="username"/><br>
+          Password: <input required type="text" name="password"><br>
+          <input type="submit" name="" value="Sign Up"/>
+         </form>
+    </div> 
+         
 </body>
 </html>
