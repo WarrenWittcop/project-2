@@ -17,7 +17,7 @@ Screen Shots:
 
 Tech Used:
 
-HTML, CSS, Embedded Javascript, Mongoose, MongoDB, Express, Node.js, Materialize collapsible code.
+HTML, CSS, Embedded Javascript, JS, Mongoose, MongoDB, Express, Node.js, Materialize collapsible code.
 
 
 Getting Started:
@@ -64,7 +64,7 @@ Website credits- The below websites have helped me with varying definitions, syn
 
 -https://www.google.com
 
--https://chat.openai.com/
+-https://chat.openai.com/-- various spelling errors, case fixing
 
 -https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
