@@ -22,7 +22,7 @@ HTML, CSS, Embedded Javascript, JS, Mongoose, MongoDB, Express, Node.js, Materia
 
 Getting Started:
 
-website: https://git.heroku.com/mm7-character-maker.git or can fork and clone the app from Github directly at: https://github.com/WarrenWittcop/project-2.
+website: https://mm7-character-maker-1fa2f56ba5d9.herokuapp.com/ or can fork and clone the app from Github directly at: https://github.com/WarrenWittcop/project-2.
 
 If you fork and clone to download the app using Node.js and Gitbash the npms I used were: 
 
@@ -66,6 +66,8 @@ Website credits- The below websites have helped me with varying definitions, syn
 
 -https://chat.openai.com/-- various spelling errors, case fixing
 
--https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+-https://css-tricks.com/snippets/css/a-guide-to-flexbox/-- all flexbox adjustments
 
 -https://www.mongodb.com/developer/products/mongodb/mongodb-schema-design-best-practices/
+
+-https://mongoosejs.com/docs/schematypes.html -- and various pages attached to that for schema editing character info 

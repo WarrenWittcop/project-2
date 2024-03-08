@@ -1,10 +1,14 @@
 const {MM7, MM7Schema} = require("../models/MM7")
+const isAuthenticated = require("../controllers/isAuthenticated");
+const router = require("express").Router();
+
 
 //create
 const create = async (req, res) => {
     try{
         console.log(req.body)
-        const newMM7s = await MM7.create(req.body)
+        const newMM7s = await MM7.create({...req.body, createdBy: req.session.currentUser._id});
+        createdBy: req.session.currentUser._id,
         res.redirect("/MM7")
     }catch(err){
         console.log(err)
@@ -15,7 +19,7 @@ const create = async (req, res) => {
 
 const index = async (req, res)=>{
     try{
-        const MM7s = await MM7.find()
+        const MM7s = await MM7.find({ createdBy: req.session.currentUser._id})
         res.render('index.ejs', { 
             MM7s, 
             tabTitle: 'Index',
@@ -44,6 +48,7 @@ const show = async (req, res) => {
 const newForm = (req, res)=>{
     try{
         res.render('new.ejs', {
+            MM7s: null,
             tabTitle: 'New Character',
             currentUser: req.session.currentUser,
         })
@@ -85,6 +90,15 @@ const destroy = async (req, res) => {
     }
 }
 
+
+router.get("/", isAuthenticated, async (req, res) => {
+    try {
+        const characters = await MM7.find({ createdBy: req.session.currentUser._id});
+        res.render("MM7/index.ejs", { characters, currentUser: req.session.currentUser})
+    } catch(err) {
+        console.log(err);
+    }
+});
 
 module.exports = {
     show,

@@ -6,6 +6,11 @@ const MM7Schema = new mongoose.Schema({
   skill1: {type: String, required: true},
   skill2: {type: String, required: true},
   race: {type:String, enum: ["Goblin", "Human", "Elf", "Dwarf"], required: true},
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
 }, {timestamps: true})
 
 const MM7 = mongoose.model("MM7", MM7Schema)
